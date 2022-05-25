@@ -35,7 +35,7 @@ If you'd like to contribute, make an issue if theres something I missed and I'll
 
 ## video
 
-video will go here once it's ready
+[video demo](https://drive.google.com/file/d/1a7-YW_uiSKWf2E7SJPqMvIgQgH_Ud-63/view)
 
 ---
 
