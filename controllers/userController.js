@@ -7,7 +7,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     getSingleUser(req, res) {
-        User.findOne({ _id: req.params.applicationId })
+        User.findOne({ _id: req.params.userId })
         .select('-__v')
             .then((user) =>
                 !user
@@ -76,7 +76,7 @@ module.exports = {
     addFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $addToSet: { tags: req.body } },
+            { $addToSet: { friends: req.body } },
             { runValidators: true, new: true }
         )
             .then((user) =>
@@ -89,7 +89,7 @@ module.exports = {
     removeFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $pull: { tags: { tagId: req.params.tagId } } },
+            { $pull: { friends: { friendId: req.params.friendId } } },
             { runValidators: true, new: true }
         )
             .then((user) =>
